@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
+        {/* Top Navigation */}
+        <Navbar /> 
+        
+        {/* Main Page Content */}
         {children}
+        
+        {/* Bottom Footer */}
+        <Footer />
       </body>
-      {/* Replace G-XXXXXXXXXX with your actual GA4 Measurement ID */}
       <GoogleAnalytics gaId="G-XXXXXXXXXX" /> 
     </html>
   );
