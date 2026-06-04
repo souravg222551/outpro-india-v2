@@ -1,8 +1,11 @@
+
+import Link from "next/link";
 import FadeIn from "./FadeIn";
 
 export default function ServicesSection() {
   const services = [
     {
+      slug: "cloud-solutions",
       title: "Cloud Solutions",
       desc: "Scalable cloud infrastructure and migration services to modernize your IT environment and reduce costs.",
       icon: (
@@ -12,6 +15,7 @@ export default function ServicesSection() {
       )
     },
     {
+      slug: "custom-development",
       title: "Custom Development",
       desc: "Tailored software solutions built with cutting-edge technologies to meet your unique business needs.",
       icon: (
@@ -21,6 +25,7 @@ export default function ServicesSection() {
       )
     },
     {
+      slug: "cybersecurity",
       title: "Cybersecurity",
       desc: "Comprehensive security solutions to protect your data, systems, and reputation from evolving threats.",
       icon: (
@@ -30,6 +35,7 @@ export default function ServicesSection() {
       )
     },
     {
+      slug: "data-analytics",
       title: "Data Analytics",
       desc: "Transform raw data into actionable insights with advanced analytics and business intelligence tools.",
       icon: (
@@ -39,6 +45,7 @@ export default function ServicesSection() {
       )
     },
     {
+      slug: "mobile-development",
       title: "Mobile Development",
       desc: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
       icon: (
@@ -48,6 +55,7 @@ export default function ServicesSection() {
       )
     },
     {
+      slug: "it-consulting",
       title: "IT Consulting",
       desc: "Strategic technology consulting to align your IT infrastructure with business objectives.",
       icon: (
@@ -74,13 +82,26 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <FadeIn key={index} direction="up" delay={0.1 * index}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-100 transition-all duration-300 group h-full">
-                <div className="w-12 h-12 bg-blue-50 rounded-xl mb-6 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                  {service.icon}
+              {/* Wrapped the card block inside a Next.js Link component */}
+              <Link href={`/services/${service.slug}`} className="block h-full group">
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-100 transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl mb-6 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6">{service.desc}</p>
+                  </div>
+                  <div className="text-blue-600 font-semibold text-sm flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn more 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">{service.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{service.desc}</p>
-              </div>
+              </Link>
             </FadeIn>
           ))}
         </div>
