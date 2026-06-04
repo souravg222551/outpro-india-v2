@@ -4,6 +4,12 @@ import ServicesSection from "./components/ServicesSection";
 import PortfolioSection from "./components/PortfolioSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 
+import KeyMetrics from "./components/KeyMetrics";
+import ContactSection from "./components/ContactSection";
+
+
+
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -12,6 +18,11 @@ export default function Home() {
       <ServicesSection />
       <PortfolioSection />
       <TestimonialsSection />
+      <KeyMetrics />
+      <ContactSection />
+
+
+    
     </main>
   );
 }
