@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Outpro.India | Corporate IT Solutions",
-  description: "Innovative IT Solutions for your business.",
+  description: "Transform your business with cutting-edge IT solutions.",
 };
 
 export default function RootLayout({
@@ -18,11 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-white text-slate-900`}>
-        <Navbar />
+      <body className={inter.className}>
         {children}
-        <Footer />
       </body>
+      {/* Replace G-XXXXXXXXXX with your actual GA4 Measurement ID */}
+      <GoogleAnalytics gaId="G-XXXXXXXXXX" /> 
     </html>
   );
 }
