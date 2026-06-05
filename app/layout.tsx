@@ -29,7 +29,7 @@ export default function RootLayout({
         {/* Bottom Footer */}
         <Footer />
       </body>
-      <GoogleAnalytics gaId="G-XXXXXXXXXX" /> 
+      <GoogleAnalytics gaId="G-ZDX8V8P25T" /> 
     </html>
   );
 }

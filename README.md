@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Outpro.India - Corporate Digital Presence Platform
 
-## Getting Started
+## Project Overview
+Modern, high-performance corporate website designed for lead generation and brand credibility.
 
-First, run the development server:
+## Tech Stack
+* **Frontend**: React.js / Next.js
+* **Backend**: Node.js (Next.js API Routes)
+* **Database**: MongoDB
+* **Deployment**: Vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technical Documentation
+* **Architecture**: A modular Next.js application using Server-Side Rendering (SSR) for performance and Client Components for interactive elements like the Contact Form.
+* **Database Schema**: The `Contact` model stores: `name`, `email`, `message`, and `timestamp`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## User Manual
+1. **Managing Content**: Update titles and descriptions directly in the components located in `components/`.
+2. **Managing Leads**: Access your MongoDB Atlas dashboard to view form submissions collected via the contact form.
+3. **Analytics**: To enable tracking, replace the `G-XXXXXXXXXX` ID in your `layout.tsx` file with your valid Google Analytics 4 Measurement ID.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Maintenance Plan
+* **Updates**: Run `npm install` periodically to ensure dependencies are secure.
+* **Backups**: Utilize MongoDB Atlas built-in automated backup features.
