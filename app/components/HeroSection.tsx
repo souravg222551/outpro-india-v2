@@ -44,7 +44,7 @@ export default function HeroSection() {
               alt="Outpro.India Team Collaboration" 
               fill
               priority
-              unoptimized
+              
               className="object-cover"
             />
           </div>
