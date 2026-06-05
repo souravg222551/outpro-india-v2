@@ -1,54 +1,44 @@
-import FadeIn from "./FadeIn";
 import Image from "next/image";
+// Note: We removed the FadeIn import
 
 export default function HeroSection() {
   return (
     <section className="py-20 lg:py-32 px-8 lg:px-24 bg-[#1e40af] overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        {/* Left Side: Text & Buttons */}
+        {/* Left Side: Text & Buttons (Renders instantly now!) */}
         <div className="text-left">
-          <FadeIn direction="up" delay={0.1}>
-            <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.15] mb-6">
-              Transform Your Business with <br className="hidden md:block" /> Innovative IT Solutions
-            </h1>
-          </FadeIn>
+          <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.15] mb-6">
+            Transform Your Business with <br className="hidden md:block" /> Innovative IT Solutions
+          </h1>
           
-          <FadeIn direction="up" delay={0.3}>
-            <p className="text-lg text-blue-100 mb-10 leading-relaxed max-w-xl">
-              Outpro.India delivers cutting-edge technology services that drive growth, efficiency, and digital transformation for businesses worldwide.
-            </p>
-          </FadeIn>
+          <p className="text-lg text-blue-100 mb-10 leading-relaxed max-w-xl">
+            Outpro.India delivers cutting-edge technology services that drive growth, efficiency, and digital transformation for businesses worldwide.
+          </p>
           
-          <FadeIn direction="up" delay={0.5}>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-3.5 bg-white text-blue-700 font-semibold rounded-lg hover:bg-slate-50 transition shadow-lg flex items-center justify-center gap-2">
-                Get Started
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-              </button>
-              <button className="px-8 py-3.5 bg-transparent text-white font-semibold rounded-lg border border-white/30 hover:bg-white/10 transition">
-                Learn More
-              </button>
-            </div>
-          </FadeIn>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="px-8 py-3.5 bg-white text-blue-700 font-semibold rounded-lg hover:bg-slate-50 transition shadow-lg flex items-center justify-center gap-2">
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+            <button className="px-8 py-3.5 bg-transparent text-white font-semibold rounded-lg border border-white/30 hover:bg-white/10 transition">
+              Learn More
+            </button>
+          </div>
         </div>
 
         {/* Right Side: Office Image */}
-        <FadeIn direction="left" delay={0.4}>
-          <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-            {/* FIXED: Replaced standard <img> with Next.js <Image> */}
-            <Image 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-              alt="Outpro.India Team Collaboration" 
-              fill
-              priority
-              
-              className="object-cover"
-            />
-          </div>
-        </FadeIn>
+        <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+          <Image 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            alt="Outpro.India Team Collaboration" 
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
 
       </div>
     </section>
