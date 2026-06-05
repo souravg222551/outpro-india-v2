@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ConsultationButton from "@/components/ConsultationButton"; // Using the new button
+import ConsultationButton from "../../components/ConsultationButton";// Using the new button
 
 const serviceDetails = {
   "cloud-solutions": {
@@ -78,6 +78,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           
           <div className="mt-10 pt-8 border-t border-slate-100">
             <ConsultationButton />
+
           </div>
         </div>
 
