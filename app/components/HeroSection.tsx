@@ -30,13 +30,12 @@ export default function HeroSection() {
 
         {/* Image Section - Hyper-Optimized for Mobile */}
         <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-          <Image 
-  src="/hero-bg.jpg" /* Changed from the long Unsplash URL */
+         <Image 
+  src="/hero-bg.avif" 
   alt="Outpro.India Team Collaboration" 
   fill
   priority
-  fetchPriority="high"
-  sizes="(max-width: 768px) 100vw, 50vw"
+  unoptimized /* Force Vercel to skip processing the local file */
   className="object-cover"
 />
             
