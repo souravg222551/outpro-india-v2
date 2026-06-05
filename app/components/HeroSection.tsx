@@ -31,13 +31,14 @@ export default function HeroSection() {
         {/* Image Section - Hyper-Optimized for Mobile */}
         <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
           <Image 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=50" 
-            alt="Outpro.India Team Collaboration" 
-            fill
-            priority
-            unoptimized /* THIS IS THE MISSING MAGIC WORD! */
-            className="object-cover"
-          /> 
+  src="/hero-bg.jpg" /* Changed from the long Unsplash URL */
+  alt="Outpro.India Team Collaboration" 
+  fill
+  priority
+  fetchPriority="high"
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="object-cover"
+/>
             
            
         </div>
