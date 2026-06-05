@@ -1,12 +1,11 @@
 import Image from "next/image";
-// Note: We removed the FadeIn import
 
 export default function HeroSection() {
   return (
     <section className="py-20 lg:py-32 px-8 lg:px-24 bg-[#1e40af] overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        {/* Left Side: Text & Buttons (Renders instantly now!) */}
+        {/* Text Section - Loads Instantly */}
         <div className="text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.15] mb-6">
             Transform Your Business with <br className="hidden md:block" /> Innovative IT Solutions
@@ -29,13 +28,15 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right Side: Office Image */}
+        {/* Image Section - Hyper-Optimized for Mobile */}
         <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
           <Image 
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
             alt="Outpro.India Team Collaboration" 
             fill
             priority
+            fetchPriority="high" /* Forces the browser to grab this first */
+            sizes="(max-width: 768px) 100vw, 50vw" /* Crucial for mobile performance! */
             className="object-cover"
           />
         </div>
