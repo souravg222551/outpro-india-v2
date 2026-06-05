@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -37,10 +38,14 @@ export default function HeroSection() {
         {/* Right Side: Office Image */}
         <FadeIn direction="left" delay={0.4}>
           <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-            <img 
+            {/* FIXED: Replaced standard <img> with Next.js <Image> */}
+            <Image 
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
               alt="Outpro.India Team Collaboration" 
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              priority
+              unoptimized
+              className="object-cover"
             />
           </div>
         </FadeIn>
